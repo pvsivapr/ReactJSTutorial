@@ -4,6 +4,8 @@ import './App.css';
 import CustomComponentTuts from "./Tutorials/CustomComponentTutorial.js"
 import PropTypesTuts from "./Tutorials/PropTypesTutorial.js"
 import StateAndPropsTuts from "./Tutorials/StateAndPropsTutorial.js"
+import RoutingTuts from "./Tutorials/RoutingTutorial.js"
+import ReactLifeCycleTuts from "./Tutorials/ReactLifeCycle.js"
 
 function App() {
   return (
@@ -23,9 +25,12 @@ function App() {
         </a>
       </header> */}
       <div className="iDefinedClass">
+        <a href="https://reactjs.org/docs/lists-and-keys.html#keys">check when you are free</a>
         <CustomComponentTuts />
         <PropTypesTuts/>
         <StateAndPropsTuts />
+        <RoutingTuts />
+        <ReactLifeCycleTuts />
       </div>
     </div>
   );

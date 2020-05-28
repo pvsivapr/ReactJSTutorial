@@ -1,0 +1,21 @@
+Hi Team,
+
+ 
+
+Please find the assignment below
+
+Task1
+Create a home components with a text box to enter text and two buttons.
+on entering value in the text box, on blur update the state and from the state read the entered value in text box and display it in a  p tag.
+
+Task2
+Create two class components which will receive two props fron home component
+in each component create proptypes that will receive a number and a string.
+
+Task3
+create routing for the components
+clicking on button1, button2 should navigate to the component1, component2 respectively.
+
+Task4
+inside component1, component2 concatenate the string ang number and update the state of the component and display the result in a p tag.
+component1, component2 should be designed in RWD using jsx styles.
