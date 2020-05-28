@@ -4,17 +4,6 @@ import TextDislay, { SideHeadingTextTypes } from "../CustomComponents/SideHeader
 
 class ReactLifeCycleTutorials extends React.Component 
 {
-    constructor(props) 
-    {
-        super(props);
-        this.state = 
-        {
-            clickCount: 0,
-            // color: "#00FF00",
-            // numberType: "zero"
-        }
-    }
-
     componentWillMount()
     {
         console.log("Component Will Mount");
@@ -32,7 +21,22 @@ class ReactLifeCycleTutorials extends React.Component
         console.log("Component Did Updated");
         if(prevState !== this.state)
         {
-
+            console.log(`The state is updated now and value of clickCount is ${this.state.clickCount}`)
+            if(prevState.clickCount !== this.state.clickCount)
+            {
+                if(this.state.clickCount === 0)
+                {
+                    this.setState({numberType: "Zero Number"});
+                }
+                else if(this.state.clickCount % 2 === 0)
+                {
+                    this.setState({numberType: "Even Number"});
+                }
+                else
+                {
+                    this.setState({numberType: "Odd Number"});
+                }
+            }
         }
         else
         {
@@ -44,6 +48,26 @@ class ReactLifeCycleTutorials extends React.Component
         console.log("Component Will Unmount");
     }
     
+    constructor(props) 
+    {
+        super(props);
+        this.state = 
+        {
+            clickCount: 0,
+            // color: "#00FF00",
+            numberType: "Zero Number"
+        }
+    }
+
+    onIncrementClicked = (()=>{
+        this.setState({clickCount: this.state.clickCount+1});
+        console.log(`current clickcount is not yet updated it is still ${this.state.clickCount}`)
+    })
+    onDecrementClicked()
+    {
+        this.setState({clickCount: this.state.clickCount-1});
+        console.log(`current clickcount is not yet updated it is still ${this.state.clickCount}`)
+    }
     
     render() {
         const uiComponent =
@@ -57,6 +81,10 @@ class ReactLifeCycleTutorials extends React.Component
                             "componentWillUnmount(){} -> "
                         ]
                     } />
+                    <p>{this.state.clickCount}</p>
+                    <p>This is an {this.state.numberType}</p>
+                    <button onClick = {this.onIncrementClicked} >Increment</button>
+                    <button onClick = {() => this.onDecrementClicked()} >Decrement</button>
                 </div>
             );
         return uiComponent;

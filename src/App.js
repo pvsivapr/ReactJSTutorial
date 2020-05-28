@@ -31,6 +31,7 @@ function App() {
         <StateAndPropsTuts />
         <RoutingTuts />
         <ReactLifeCycleTuts />
+        <div style={{margin:50}}></div>
       </div>
     </div>
   );
