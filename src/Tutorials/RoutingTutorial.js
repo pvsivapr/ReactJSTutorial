@@ -1,6 +1,11 @@
 import React from "react"
 import Header from "../CustomComponents/HeaderUI.js"
+import {Link, Switch, Route} from "react-router-dom"
+
 import TextDislay,{SideHeadingTextTypes} from "../CustomComponents/SideHeaderWithTextDisplay.js"
+import BrowserRoutingTuts from "./BrowserRouterTutorial.js"
+
+import "./GeneralStyles/GeneralStyles.css"
 
 class RoutingTutorials extends React.Component 
 {
@@ -10,7 +15,8 @@ class RoutingTutorials extends React.Component
                 <div>
                     <Header title="Routing" date="27-May-2020"/>
                     <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Introduction" text={
-                        ["Normal web apps we call different/another page by using <a href=\"./Contacts.html\">ButtonName</a>(this is a traditional HTML way of page navigation)",
+                        [
+                            "Normal web apps we call different/another page by using <a href=\"./Contacts.html\">ButtonName</a>(this is a traditional HTML way of page navigation)",
                             "But for like react single page applications we use a process called routing",
                             "For this we have to install:",
                             "React-Router -> Common core components, web and the react native",
@@ -19,21 +25,14 @@ class RoutingTutorials extends React.Component
                         ]
                     } />
                     <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Building blocks of react router" text={
-                        ["Browser Router",
+                        [
+                            "Browser Router or Hash Router",
                             "Link, Switch",
                             "Link, Navlink"
                         ]
                     } />
-
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Browser Router"/>
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Browser router - will follow user friendly urls like:" text={
-                        [
-                            "www.companyname.com/aboutus",
-                            "www.companyname.com/product/computer",
-                            "www.companyname.com/product/homeessentials"
-                        ]
-                    } />
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Hash router"/>
+                    <Link to="/BrowserRouter">BrowserRouter</Link>
+                    {/* <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Hash router"/> */}
                     <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Hash router - will follow urls like:" text={
                         [
                             "www.companyname.com/#/aboutus",
@@ -41,8 +40,13 @@ class RoutingTutorials extends React.Component
                             "www.companyname.com/#/product/homeessentials"
                         ]
                     } />
-                    <p>Between Browser Router and Hash Router we have to use one of them based on the server we are using</p>
-                    <p>For hash Router we have to use Some or more extra configrations has to be installed to the server</p>
+                    
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="NOTE:" text={
+                        [
+                            "Between Browser Router and Hash Router we have to use one of them based on the server configuration we are using",
+                            "For hash Router we have to use Some or more extra configrations has to be installed to the server"
+                        ]
+                    } />
                     
                     <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Key words" text={
                         [
