@@ -43,6 +43,9 @@ export default class Home extends React.Component {
                         <li>
                             <Link to="/LifeCycle">LifeCycleTut</Link>
                         </li>
+                        <li>
+                            <Link to="/Examples">Examples</Link>
+                        </li>
                         {/* <li>
                             <Link to="/BrowserRouter">BrowserRouterTuts</Link>
                         </li> */}
