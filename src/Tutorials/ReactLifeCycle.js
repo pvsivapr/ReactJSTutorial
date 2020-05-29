@@ -74,7 +74,7 @@ class ReactLifeCycleTutorials extends React.Component
             (
                 <div>
                     <Header title="React LifeCycle" date="28-May-2020" />
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Most important and useable methods" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Most important and useable methods" points={
                         [
                             "componentDidMount(){} -> ",
                             "componentDidUpdate(prevProps, prevState){} -> ",

@@ -8,7 +8,7 @@ class CustomComponentTutorials extends React.Component {
             (
                 <div>
                     <Header title="CustomComponent Tutorial" date="21-May-2020"/>
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Example title" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Example title" points={
                         ["Example Text 1",
                             "Example Text 2",
                             "Example Text 3",

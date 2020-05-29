@@ -14,7 +14,7 @@ class RoutingTutorials extends React.Component
             (
                 <div>
                     <Header title="Routing" date="27-May-2020"/>
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Introduction" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Introduction" points={
                         [
                             "Normal web apps we call different/another page by using <a href=\"./Contacts.html\">ButtonName</a>(this is a traditional HTML way of page navigation)",
                             "But for like react single page applications we use a process called routing",
@@ -24,7 +24,7 @@ class RoutingTutorials extends React.Component
                             "React-Router-Native -> this is for react native part(mobile development)"
                         ]
                     } />
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Building blocks of react router" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Building blocks of react router" points={
                         [
                             "Browser Router or Hash Router",
                             "Link, Switch",
@@ -33,7 +33,7 @@ class RoutingTutorials extends React.Component
                     } />
                     <Link to="/BrowserRouter">BrowserRouter</Link>
                     {/* <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Hash router"/> */}
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Hash router - will follow urls like:" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Hash router - will follow urls like:" points={
                         [
                             "www.companyname.com/#/aboutus",
                             "www.companyname.com/#/product/computer",
@@ -41,14 +41,14 @@ class RoutingTutorials extends React.Component
                         ]
                     } />
                     
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="NOTE:" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="NOTE:" points={
                         [
                             "Between Browser Router and Hash Router we have to use one of them based on the server configuration we are using",
                             "For hash Router we have to use Some or more extra configrations has to be installed to the server"
                         ]
                     } />
                     
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Key words" text={
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Key words" points={
                         [
                             "Map",
                             "find",
@@ -57,7 +57,11 @@ class RoutingTutorials extends React.Component
                         ]
                     }/>
 
-                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Nested Routing" />
+                    <TextDislay type={SideHeadingTextTypes.BulletPointsWithHeading} heading="Nested Routing" description={
+                        [
+                            ""
+                        ]
+                    } />
 
                     
                 </div>

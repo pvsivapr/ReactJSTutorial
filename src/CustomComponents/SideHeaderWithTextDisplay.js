@@ -55,17 +55,33 @@ class SideHeadingWithText extends React.Component {
     //     }
     // });
 
-    LoadBulletPoints() {
-        var textHtml = [];
-        //console.log(this.props.text);
-        if (this.props.text !== null && this.props.text !== undefined) {
-            this.props.text.forEach(textItem => {
-                textHtml.push(<li key={textItem.toString()}>{textItem}</li>);//Without unique "key" throws an error in console
+    LoadParagraphs() {
+        var parasHtml = [];
+        if (this.props.description !== null && this.props.description !== undefined) {
+            this.props.description.forEach(textItem => {
+                parasHtml.push(<p style={this.genTextStyle} key={textItem.toString()}>{textItem}</p>);//Without unique "key" throws an error in console
             })
-            //console.log(textHtml);
-            if (textHtml !== null && textHtml !== undefined) {
-                //return textHtml;
-                return <ul style={this.genTextStyle}>{textHtml}</ul>;
+            if (parasHtml !== null && parasHtml !== undefined) {
+                return <div>{parasHtml}</div>;
+            }
+            else
+            {
+                return undefined;
+            }
+        }
+    }
+
+    LoadBulletPoints() {
+        var pointsHtml = [];
+        //console.log(this.props.points);
+        if (this.props.points !== null && this.props.points !== undefined) {
+            this.props.points.forEach(point => {
+                pointsHtml.push(<li key={point.toString()}>{point}</li>);//Without unique "key" throws an error in console
+            })
+            //console.log(pointsHtml);
+            if (pointsHtml !== null && pointsHtml !== undefined) {
+                //return pointsHtml;
+                return <ul style={this.genTextStyle}>{pointsHtml}</ul>;
             }
             else
             {
@@ -101,11 +117,21 @@ class SideHeadingWithText extends React.Component {
         //         }
         //     }
 
-        var dynamicTexts;
-        var processedTexts = undefined;
+        var dynamicParas;
+        var processedParas = this.LoadParagraphs();
+        if (processedParas !== null && processedParas !== undefined) {
+            dynamicParas = processedParas;//<ul style={this.genTextStyle}>{processedTexts}</ul>;
+        }
+        else
+        {
+            dynamicParas = <div></div>
+        }
+
+        var dynamicBulletPoints;
+        var processedBulletPoints = undefined;
         if(this.props.type === SideHeadingTextTypes.BulletPointsWithHeading)
         {
-            processedTexts = this.LoadBulletPoints();
+            processedBulletPoints = this.LoadBulletPoints();
         }
         else if(this.props.type === SideHeadingTextTypes.Paragraph)
         {
@@ -116,19 +142,21 @@ class SideHeadingWithText extends React.Component {
 
         }
 
-        if (processedTexts !== null && processedTexts !== undefined) {
-            dynamicTexts = processedTexts;//<ul style={this.genTextStyle}>{processedTexts}</ul>;
+        if (processedBulletPoints !== null && processedBulletPoints !== undefined) {
+            dynamicBulletPoints = processedBulletPoints;//<ul style={this.genTextStyle}>{processedTexts}</ul>;
         }
         else
         {
-            dynamicTexts = <div></div>
+            dynamicBulletPoints = <div></div>
         }
 
         var  uiComponent = 
         (
             <div>
                 <p style={{ color: "black", textAlign: "left", fontSize: 28 }}>{this.props.heading}</p>
-                {dynamicTexts}
+                {/* <p style={this.genTextStyle}>{this.props.description}</p> */}
+                {dynamicParas}
+                {dynamicBulletPoints}
             </div>
         );
 
